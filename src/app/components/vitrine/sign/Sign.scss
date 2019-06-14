@@ -1,0 +1,19 @@
+@import "../../../styles/variable.scss";
+
+.loginContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $vert_main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .signUp {
+        width: 400px;
+        height: 800px;
+        background: $beige;
+    }
+}
