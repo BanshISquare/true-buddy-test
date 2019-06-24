@@ -11,9 +11,9 @@
     justify-content: center;
     align-items: center;
 
-    .signUp {
-        width: 400px;
-        height: 800px;
-        background: $beige;
+    .componentContainer {
+        .signInContainer {
+            width: 400px;
+        }
     }
 }
