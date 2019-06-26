@@ -15,7 +15,7 @@ export class Sign extends React.Component<any, any> {
 class SignIn extends React.Component<any, any> {
     render() {
         return <div className="signInContainer">
-            <button className="btn login"></button>
+            <button className="btn login">Se connecter</button>
         </div>
     }
 }
