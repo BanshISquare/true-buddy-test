@@ -2,11 +2,12 @@ import * as React from 'react';
 import {Route, Link, Switch } from "react-router-dom";
 import { VitrineHome } from './home/home';
 import { VitrineHeader } from './header/header';
-import { Sign } from './sign/Sign';
+import Sign from './sign/Sign';
 
-export class VitrineShell extends React.Component<any, any> {
-   render() {
-        return <div>
+const VitrineShell: React.FunctionComponent<any> = (props) => {
+
+    return (
+        <div>
             Vitrine !
             <VitrineHeader></VitrineHeader>
             <Switch>
@@ -14,5 +15,7 @@ export class VitrineShell extends React.Component<any, any> {
                 <Route exact path="/sign" component={Sign} />
             </Switch>
         </div>
-   }
+    );
 }
+
+export default VitrineShell;

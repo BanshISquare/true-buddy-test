@@ -15,6 +15,29 @@
     .componentContainer {
         .signInContainer {
             width: 400px;
+            border-radius: 8px;
+
+            .signContentContainer {
+                background-color: $beige;
+                width: 100;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                transition: height 0.25s cubic-bezier(0.0, 0.0, 0.2, 1);
+
+                &--closed {
+                    height: 0;
+                }
+
+                &--opened {
+                    height: 200px;
+                }
+            }
+
+            .btn {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+                width: 100%;
+            }
         }
     }
 }

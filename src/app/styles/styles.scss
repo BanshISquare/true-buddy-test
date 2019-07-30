@@ -1,10 +1,31 @@
 @import './variable.scss';
 
+/* Global Style
+======================================== */
+
 .btn {
     background-color: $vert_pomme;
     color: $text_color;
     height: 35px;
     font-size: $font-sm;
+    border: none;
+    padding: 0;
+
+    &--large {
+        height: 50px;
+    }
+}
+
+a, .btn {
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+*:focus {
+    outline: none;
 }
 
 /* Texte classes 
