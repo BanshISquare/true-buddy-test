@@ -1,5 +1,5 @@
-import * as React from "React";
-import { useState } from "React";
+import * as React from "react";
+import { useState } from "react"
 import classNames from 'classnames';
 import "./Sign.scss";
 
@@ -22,15 +22,18 @@ const SignIn: React.FunctionComponent<any> = (props) => {
 
     return (
         <div className="signInContainer">
-            {isContentOpened && 
-                <div className={classNames('signContentContainer', {
-                        'signContentContainer--open': isContentOpened,
-                        'signContentContainer--closed': !isContentOpened,
-                    })}
-                >
-                </div>
-            }
-            <button className="btn btn--large login" onClick={() => {setIsContentOpened(!isContentOpened)}}>
+            <div className={classNames('signContentContainer', {
+                    'signContentContainer--opened': isContentOpened,
+                    'signContentContainer--closed': !isContentOpened,
+                })}
+            >
+            </div>
+            <button className={classNames("btn btn--large login", {
+                    'btn--not-alone': isContentOpened,
+                    'btn--alone': !isContentOpened,
+                })}
+                onClick={() => {setIsContentOpened(!isContentOpened)}}
+            >
                 Se connecter
             </button>
         </div>

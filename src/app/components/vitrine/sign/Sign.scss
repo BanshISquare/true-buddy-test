@@ -16,10 +16,11 @@
         .signInContainer {
             width: 400px;
             border-radius: 8px;
+            box-shadow: $shadow-2;
 
             .signContentContainer {
                 background-color: $beige;
-                width: 100;
+                width: 100%;
                 border-top-left-radius: 8px;
                 border-top-right-radius: 8px;
                 transition: height 0.25s cubic-bezier(0.0, 0.0, 0.2, 1);
@@ -37,6 +38,16 @@
                 border-bottom-left-radius: 8px;
                 border-bottom-right-radius: 8px;
                 width: 100%;
+
+                &--alone {
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                }
+
+                &--not-alone {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
             }
         }
     }
