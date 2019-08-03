@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "edge",
+      "version": "dev",
+      "request": "launch",
+      "name": "Attach to Microsoft Edge",
+      "url": "http://localhost:8080/",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

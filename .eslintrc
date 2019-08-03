@@ -1,8 +1,15 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["react", "jsx-ally", "import", "prettier"],
-  "rules": {
-    "prettier/prettier": ["error"]
-  }
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"extends": ["airbnb"],
+	"plugins": ["react", "jsx-a11y", "import"],
+	"rules": {
+		"indent": ["error", "tab"]
+	}
 }
