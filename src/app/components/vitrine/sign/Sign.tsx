@@ -40,6 +40,7 @@ const SignIn: React.FunctionComponent<any> = props => {
 };
 
 const SignUp: React.FunctionComponent<any> = props => {
+
 	return <div className="signUpContainer" />;
 };
 
