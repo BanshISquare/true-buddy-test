@@ -1,15 +1,58 @@
 {
-	"parser": "babel-eslint",
+	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true
-		},
-		"ecmaVersion": 2018,
-		"sourceType": "module"
+		"project": "./tsconfig.json",
+		"tsconfigRootDir": "."
 	},
-	"extends": ["airbnb"],
-	"plugins": ["react", "jsx-a11y", "import"],
+	"extends": [
+		"airbnb",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/typescript",
+	],
+	"plugins": [
+		"@typescript-eslint",
+		"react-hooks"
+	],
+	// "plugins": ["react", "jsx-a11y", "import"],
 	"rules": {
-		"indent": ["error", "tab"]
+		"indent": [
+			"error",
+			"tab"
+		],
+		/**
+			* @bug https://github.com/benmosher/eslint-plugin-import/issues/1282
+			* "import/named" temporary disable.
+			*/
+		"import/named": "off",
+		/**
+			* @bug?
+			* "import/export" temporary disable.
+			*/
+		"import/export": "off",
+		"import/prefer-default-export": "off", // Allow single Named-export
+		"no-unused-expressions": [
+			"warn",
+			{
+				"allowShortCircuit": true,
+				"allowTernary": true
+			}
+		], // https://eslint.org/docs/rules/no-unused-expressions
+		/**
+			* @description rules of eslint-plugin-react
+			*/
+		"react/jsx-filename-extension": [
+			"warn",
+			{
+				"extensions": [
+					".jsx",
+					".tsx"
+				]
+			}
+		], // also want to use with ".tsx"
+		"react/prop-types": "off", // Is this incompatible with TS props type?
+		/**
+			* @description rules of eslint-plugin-react-hooks
+			*/
+		"react-hooks/rules-of-hooks": "error",
 	}
 }
