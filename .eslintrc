@@ -54,5 +54,10 @@
 			* @description rules of eslint-plugin-react-hooks
 			*/
 		"react-hooks/rules-of-hooks": "error",
+		// Want to indent with my own tab 4
+		"react/jsx-indent": "off",
+		"react/jsx-indent-props": "off",
+		"@typescript-eslint/indent": "off",
+		"no-tabs": "off",
 	}
 }
