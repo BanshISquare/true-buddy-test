@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-export class VitrineHome extends React.Component<any, any> {
-    render() {
-        return <div>Home</div>
-    }
-}
+const VitrineHome: React.FunctionComponent<{}> = (): JSX.Element => (
+	<div>Home</div>
+);
+
+export { VitrineHome };

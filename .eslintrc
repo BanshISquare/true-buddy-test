@@ -59,5 +59,7 @@
 		"react/jsx-indent-props": "off",
 		"@typescript-eslint/indent": "off",
 		"no-tabs": "off",
+		// Want to prefix my interface with "I"
+		"@typescript-eslint/interface-name-prefix": "off",
 	}
 }

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 import './Sign.scss';
 
-const Sign: React.FunctionComponent<any> = (): JSX.Element => (
+const Sign: React.FunctionComponent<{}> = (): JSX.Element => (
 	<div className="loginContainer">
 		<div className="componentContainer">
 			<SignIn />
@@ -11,7 +11,7 @@ const Sign: React.FunctionComponent<any> = (): JSX.Element => (
 	</div>
 );
 
-const SignIn: React.FunctionComponent<any> = (props): JSX.Element => {
+const SignIn: React.FunctionComponent<{}> = (): JSX.Element => {
 	const [isContentOpened, setIsContentOpened] = useState(false);
 
 	return (
@@ -37,6 +37,6 @@ const SignIn: React.FunctionComponent<any> = (props): JSX.Element => {
 	);
 };
 
-const SignUp: React.FunctionComponent<any> = (props): JSX.Element => <div className="signUpContainer" />;
+const SignUp: React.FunctionComponent<{}> = (): JSX.Element => <div className="signUpContainer" />;
 
 export default Sign;
