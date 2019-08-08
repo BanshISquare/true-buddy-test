@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
+import { History } from 'history';
 import VitrineShell from './vitrine/VitrineShell';
 import { ConnectedShell } from './connected/ConnectedShell';
 

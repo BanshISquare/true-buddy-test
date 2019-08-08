@@ -5,6 +5,6 @@ import AppShell from './components/AppShell';
 
 declare let document;
 
-const history: History<any> = createBrowserHistory();
+const history: History = createBrowserHistory();
 
 ReactDOM.render(<AppShell history={history} />, document.getElementById('root'));
