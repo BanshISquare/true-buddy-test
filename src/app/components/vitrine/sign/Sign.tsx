@@ -17,30 +17,44 @@ const Sign: React.FunctionComponent<{}> = (): JSX.Element => {
 	return (
 		<div className="loginContainer">
 			<div className="componentContainer">
-				<SignIn currentlyOpenedTab={currentlyOpenedTab} toggleTab={setCurrentlyOpenedTab} />
-				<SignUp currentlyOpenedTab={currentlyOpenedTab} toggleTab={setCurrentlyOpenedTab} />
+				<SignComponent
+					assignedValue={ContentState.SIGNIN}
+					buttonLabel="Se connecter"
+					currentlyOpenedTab={currentlyOpenedTab}
+					toggleTab={setCurrentlyOpenedTab}
+				/>
+				<SignComponent
+					assignedValue={ContentState.SIGNUP}
+					buttonLabel="S'inscrire'"
+					currentlyOpenedTab={currentlyOpenedTab}
+					toggleTab={setCurrentlyOpenedTab}
+				/>
 			</div>
 		</div>
 	);
 };
 
-interface ISignInProps {
+interface ISignComponentProps {
+	assignedValue: ContentState;
+	buttonLabel: string;
 	currentlyOpenedTab: ContentState;
 	toggleTab: (state: ContentState) => void;
 }
 
-const SignIn: React.FunctionComponent<ISignInProps> = ({
+const SignComponent: React.FunctionComponent<ISignComponentProps> = ({
+	assignedValue,
+	buttonLabel,
 	currentlyOpenedTab,
 	toggleTab,
 }): JSX.Element => {
 	const [isTabOpened, setIsTabOpened] = useState<boolean>(false);
 
 	useEffect((): void => {
-		setIsTabOpened(currentlyOpenedTab === ContentState.SIGNIN);
+		setIsTabOpened(currentlyOpenedTab === assignedValue);
 	}, [currentlyOpenedTab]);
 
 	return (
-		<div className="signInContainer">
+		<div className="signContainer">
 			<div className={classNames('signContentContainer', {
 				'signContentContainer--closed': !isTabOpened,
 				'signContentContainer--opened': isTabOpened,
@@ -52,26 +66,14 @@ const SignIn: React.FunctionComponent<ISignInProps> = ({
 					'btn--not-alone': isTabOpened,
 				})}
 				onClick={(): void => {
-					toggleTab(isTabOpened ? ContentState.BOTH_CLOSED : ContentState.SIGNIN);
+					toggleTab(isTabOpened ? ContentState.BOTH_CLOSED : assignedValue);
 				}}
 				type="button"
 			>
-				Se connecter
+				{buttonLabel}
 			</button>
 		</div>
 	);
 };
-
-interface ISignUpProps {
-	currentlyOpenedTab: ContentState;
-	toggleTab: (state: ContentState) => void;
-}
-
-const SignUp: React.FunctionComponent<ISignUpProps> = ({
-	currentlyOpenedTab,
-	toggleTab,
-}): JSX.Element => (
-		<div className="signUpContainer" />
-	);
 
 export default Sign;
