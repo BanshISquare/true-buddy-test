@@ -13,10 +13,12 @@
     align-items: center;
 
     .componentContainer {
+        position: relative;
         .signContainer {
             width: 400px;
             border-radius: 8px;
             box-shadow: $shadow-2;
+            position: relative;
 
             .signContentContainer {
                 background-color: $beige;

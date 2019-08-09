@@ -23,12 +23,6 @@ const Sign: React.FunctionComponent<{}> = (): JSX.Element => {
 					currentlyOpenedTab={currentlyOpenedTab}
 					toggleTab={setCurrentlyOpenedTab}
 				/>
-				<SignComponent
-					assignedValue={ContentState.SIGNUP}
-					buttonLabel="S'inscrire'"
-					currentlyOpenedTab={currentlyOpenedTab}
-					toggleTab={setCurrentlyOpenedTab}
-				/>
 			</div>
 		</div>
 	);
@@ -50,11 +44,19 @@ const SignComponent: React.FunctionComponent<ISignComponentProps> = ({
 	const [isTabOpened, setIsTabOpened] = useState<boolean>(false);
 
 	useEffect((): void => {
-		setIsTabOpened(currentlyOpenedTab === assignedValue);
-	}, [currentlyOpenedTab]);
+		setTimeout((): void => {
+			setIsTabOpened(true);
+		}, 750);
+	}, []);
 
 	return (
-		<div className="signContainer">
+		<div
+			className="signContainer"
+			style={{
+				/*top: `-${(index - 1) * 15}px`,
+				zIndex: stackSize - (index - 1),*/
+			}}
+		>
 			<div className={classNames('signContentContainer', {
 				'signContentContainer--closed': !isTabOpened,
 				'signContentContainer--opened': isTabOpened,
