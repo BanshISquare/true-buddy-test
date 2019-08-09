@@ -2,45 +2,20 @@ import classNames from 'classnames';
 import React, { useState, useEffect } from 'react';
 import './Sign.scss';
 
-enum ContentState {
-	BOTH_CLOSED = 0,
-	SIGNIN,
-	SIGNUP
-}
-
 const Sign: React.FunctionComponent<{}> = (): JSX.Element => {
-	const [
-		currentlyOpenedTab,
-		setCurrentlyOpenedTab,
-	] = useState<ContentState>(ContentState.BOTH_CLOSED);
 
 	return (
 		<div className="loginContainer">
 			<div className="componentContainer">
-				<SignComponent
-					assignedValue={ContentState.SIGNIN}
-					buttonLabel="Se connecter"
-					currentlyOpenedTab={currentlyOpenedTab}
-					toggleTab={setCurrentlyOpenedTab}
-				/>
+				<SignComponentsContainer />
 			</div>
 		</div>
 	);
 };
 
-interface ISignComponentProps {
-	assignedValue: ContentState;
-	buttonLabel: string;
-	currentlyOpenedTab: ContentState;
-	toggleTab: (state: ContentState) => void;
-}
-
-const SignComponent: React.FunctionComponent<ISignComponentProps> = ({
-	assignedValue,
-	buttonLabel,
-	currentlyOpenedTab,
-	toggleTab,
-}): JSX.Element => {
+const SignComponentsContainer: React.FunctionComponent = (): JSX.Element => {
+	const [displayedTabIndex, setDisplayedTabIndex] = useState(undefined);
+	const [isSwitchingTab, setIsSwitchingTab] = useState(false);
 	const [isTabOpened, setIsTabOpened] = useState<boolean>(false);
 
 	useEffect((): void => {
@@ -48,6 +23,50 @@ const SignComponent: React.FunctionComponent<ISignComponentProps> = ({
 			setIsTabOpened(true);
 		}, 750);
 	}, []);
+
+	useEffect((): void => {
+		if (displayedTabIndex === undefined) {
+			return;
+		}
+
+		setIsSwitchingTab(true);
+		setTimeout((): void => {
+			setIsSwitchingTab(false);
+		}, 750);
+	}, [displayedTabIndex]);
+
+	return (
+		<div className={classNames('sign-components-container', {
+			'switch-tab-animation': isSwitchingTab,
+			'sign-components-container--closed': !isTabOpened,
+			'sign-components-container--opened': isTabOpened,
+		})}
+		>
+			{displayedTabIndex === 0 && (
+				<SignPanel
+					buttonLabel="Se connecter"
+					index={1}
+				/>
+			)}
+			{displayedTabIndex === 1 && (
+				<SignPanel
+					buttonLabel="S'inscrire"
+					index={1}
+				/>
+			)}
+		</div>
+	);
+};
+
+interface ISignPanelProps {
+	buttonLabel: string;
+	index: number;
+}
+
+const SignPanel: React.FunctionComponent<ISignPanelProps> = ({
+	buttonLabel,
+	index,
+}): JSX.Element => {
 
 	return (
 		<div
@@ -58,8 +77,7 @@ const SignComponent: React.FunctionComponent<ISignComponentProps> = ({
 			}}
 		>
 			<div className={classNames('signContentContainer', {
-				'signContentContainer--closed': !isTabOpened,
-				'signContentContainer--opened': isTabOpened,
+
 			})}
 			/>
 			<button
