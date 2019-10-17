@@ -69,30 +69,7 @@ const SignPanel: React.FunctionComponent<ISignPanelProps> = ({
 }): JSX.Element => {
 
 	return (
-		<div
-			className="signContainer"
-			style={{
-				/*top: `-${(index - 1) * 15}px`,
-				zIndex: stackSize - (index - 1),*/
-			}}
-		>
-			<div className={classNames('signContentContainer', {
-
-			})}
-			/>
-			<button
-				className={classNames('btn btn--large login', {
-					'btn--alone': !isTabOpened,
-					'btn--not-alone': isTabOpened,
-				})}
-				onClick={(): void => {
-					toggleTab(isTabOpened ? ContentState.BOTH_CLOSED : assignedValue);
-				}}
-				type="button"
-			>
-				{buttonLabel}
-			</button>
-		</div>
+		<div />
 	);
 };
 
