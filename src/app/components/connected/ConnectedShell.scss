@@ -1,7 +1,7 @@
-$red: red;
+@import '../../styles/variable';
 
 .connected {
     span {
-        color: $red;
+        color: $vert_main;
     }
 }

@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
     "@types/history": "^4.7.2",
+    "babel-jest": "^24.9.0",
+    "classnames": "^2.2.6",
+    "history": "^4.9.0",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -13,10 +19,20 @@
     "typescript": "^3.5.1"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.19",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "css-loader": "^3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.6.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
@@ -26,9 +42,11 @@
     "webpack-dev-server": "^3.7.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "./node_modules/.bin/webpack",
-    "start": "node_modules/.bin/webpack-dev-server"
+    "start": "node_modules/.bin/webpack-dev-server",
+    "lint": "eslint src/** --ext .ts,.tsx",
+    "lint:fix": "npm lint --fix"
   },
   "repository": {
     "type": "git",

@@ -1,23 +1,22 @@
 import * as React from 'react';
-import { Vitrine } from './vitrine/Vitrine';
+import { Router, Route, Switch } from 'react-router-dom';
+import { History } from 'history';
+import VitrineShell from './vitrine/VitrineShell';
 import { ConnectedShell } from './connected/ConnectedShell';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 interface IAppShellProps {
-    history: any;
+	history: History;
 }
 
-export class AppShell extends React.Component<IAppShellProps, any> {
+const AppShell: React.FunctionComponent<IAppShellProps> = ({ history }): JSX.Element => (
+	<div>
+		<Router history={history}>
+			<Switch>
+				<Route path="/" component={VitrineShell} />
+				{/* <Route exact path="/dashboard" component={ConnectedShell} /> */}
+			</Switch>
+		</Router>
+	</div>
+);
 
-   render() {
-        return <div>
-            <Router history={this.props.history}>
-                <Link to="/dashboard">About</Link>
-                <Switch>
-                    <Route exact path="/" component={Vitrine} />
-                    <Route exact path="/dashboard" component={ConnectedShell} />
-                </Switch>
-            </Router>;
-        </div>
-   }
-}
+export default AppShell;
