@@ -12,8 +12,12 @@ const AppShell: React.FunctionComponent<IAppShellProps> = ({ history }): JSX.Ele
 	<div>
 		<Router history={history}>
 			<Switch>
-				<Route path="/" component={VitrineShell} />
-				{/* <Route exact path="/dashboard" component={ConnectedShell} /> */}
+				<Route path="/vitrine">
+					<VitrineShell />
+				</Route>
+				<Route path="/">
+					<ConnectedShell />
+				</Route>
 			</Switch>
 		</Router>
 	</div>

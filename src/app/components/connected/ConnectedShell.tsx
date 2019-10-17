@@ -1,10 +1,10 @@
 import * as React from 'react';
-import './ConnectedShell.scss';
+import Header from './header/Header';
 
 const ConnectedShell: React.FunctionComponent<{}> = (): JSX.Element => (
-	<div className="connected">
-		<span>Connected !</span>
-	</div>
+	<>
+		<Header />
+	</>
 );
 
 export { ConnectedShell };
