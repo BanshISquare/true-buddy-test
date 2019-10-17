@@ -4,6 +4,9 @@
 		"project": "./tsconfig.json",
 		"tsconfigRootDir": "."
 	},
+	"env": {
+		"jest": true
+	},
 	"extends": [
 		"airbnb",
 		"plugin:@typescript-eslint/recommended",
