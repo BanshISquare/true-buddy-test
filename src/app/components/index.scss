@@ -1,2 +1,23 @@
 @import './connected/index.scss';
 @import './vitrine/index.scss';
+
+///*------------------------------------*\
+//    #GLOBAL-STYLES
+//\*------------------------------------*/
+
+/*
+ * =====================================
+ * SCAFOLD
+ * =====================================
+ */
+.container-fluid {
+    width: unset;
+    max-width: 1400px !important;
+    padding: 0 100px;
+    margin: 0 auto;
+    max-width: none;
+
+    @include media-breakpoint-down(md) {
+        padding: 0 25px;
+    }
+}
