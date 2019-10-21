@@ -3,7 +3,14 @@
 //\*------------------------------------*/
 
 .connected-header {
-    width: 500px;
-    height: 500px;
-    background-color: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $grey;
+    box-shadow: $shadow-1;
+    height: 100px;
+
+    &_content {
+    }
 }
