@@ -7,6 +7,17 @@
 
 /*
  * =====================================
+ * RESET
+ * =====================================
+ */
+
+ html, body {
+     margin: 0;
+     padding: 0;
+ }
+
+/*
+ * =====================================
  * SCAFOLD
  * =====================================
  */
@@ -17,7 +28,7 @@
     margin: 0 auto;
     max-width: none;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down($md) {
         padding: 0 25px;
     }
 }
