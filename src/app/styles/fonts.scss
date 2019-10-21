@@ -1,0 +1,91 @@
+
+/*
+ * =====================================
+ * LINE-HEIGHTS
+ * =====================================
+ */
+
+$line-height-headings: 	1.1 !default;
+
+/*
+ * =====================================
+ * FONT-WEIGHT
+ * =====================================
+ */
+$fw-light:  			300 !default;
+$fw-normal: 			400 !default;
+$fw-semibold:  			600 !default;
+$fw-bold:  				700 !default;
+
+$fw-headings:  			$fw-light !default;
+
+/*
+ * =====================================
+ * FONT-SIZE
+ * =====================================
+ */
+$font-size-xxl: 		56px !default;
+$font-size-xl: 			53px !default;
+$font-size-lg: 			22px !default;
+$font-size-md: 			16px !default;
+$font-size-sm: 			12px !default;
+$font-size-xs: 			10px !default;
+
+$h1-font-size: 			$font-size-xxl !default;
+$h2-font-size: 			$font-size-xl !default;
+$h3-font-size: 			$font-size-lg !default;
+$h4-font-size: 			$font-size-md !default;
+$h5-font-size: 			$base-font-size !default;
+$h6-font-size: 			$font-size-sm !default;
+
+$h1-font-size-sm: 		$h1-font-size * .4 !default;
+$h2-font-size-sm: 		$h2-font-size * .6 !default;
+$h3-font-size-sm: 		$h3-font-size * .4 !default;
+$h4-font-size-sm: 		$h4-font-size * .4 !default;
+$h5-font-size-sm: 		$h5-font-size * .4 !default;
+$h6-font-size-sm: 		$h6-font-size * .4 !default;
+
+$h1-font-size-md: 		$h1-font-size * .7 !default;
+$h2-font-size-md: 		$h2-font-size * .7 !default;
+$h3-font-size-md: 		$h3-font-size * .7 !default;
+$h4-font-size-md: 		$h4-font-size * .7 !default;
+$h5-font-size-md: 		$h5-font-size * .7 !default;
+$h6-font-size-md: 		$h6-font-size * .7 !default;
+
+h1, h2, h3, h4, h5, h6
+{
+	font-weight: $fw-headings;
+	line-height: $line-height-headings;
+	text-transform: uppercase;
+
+	&:first-child { margin-top: 0; }
+	&:last-child { margin-bottom: 0; }
+}
+
+h1 { font-size: $h1-font-size }
+h2 { font-size: $h2-font-size }
+h3 { font-size: $h3-font-size }
+h4 { font-size: $h4-font-size }
+h5 { font-size: $h5-font-size }
+h6 { font-size: $h6-font-size }
+
+@include media-breakpoint-down($lg)
+{
+	h1 { font-size: $h1-font-size-md; }
+	h2 { font-size: $h2-font-size-md; }
+	h3 { font-size: $h3-font-size-md; }
+	h4 { font-size: $h4-font-size-md; }
+	h5 { font-size: $h5-font-size-md; }
+	h6 { font-size: $h6-font-size-md; }	
+}
+
+
+@include media-breakpoint-down($sm)
+{
+	h1 { font-size: $h1-font-size-sm; }
+	h2 { font-size: $h2-font-size-sm; }
+	h3 { font-size: $h3-font-size-sm; }
+	h4 { font-size: $h4-font-size-sm; }
+	h5 { font-size: $h5-font-size-sm; }
+	h6 { font-size: $h6-font-size-sm; }
+}
