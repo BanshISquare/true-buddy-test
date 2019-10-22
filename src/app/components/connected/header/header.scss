@@ -7,9 +7,10 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: $grey;
+    background-color: $white;
     box-shadow: $shadow-1;
     height: 100px;
+    z-index: 1;
 
     &_content {
     }
