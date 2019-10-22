@@ -12,6 +12,28 @@
     height: 100px;
     z-index: 1;
 
-    &_content {
+    &_content-container {
+        display: flex;
+
+        .site-logo {
+            height: 100%;
+            flex-basis: 100px;
+            flex-shrink: 0;
+            background-color: $lightblue;
+        }
+
+        .header-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            &_sub {
+                height: 50%;
+                padding: 0 25px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
     }
 }
