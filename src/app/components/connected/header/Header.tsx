@@ -1,9 +1,9 @@
 import * as React from 'react';
+import HeaderNavigation from '../header-navigation/HeaderNavigation';
 
 const LocaleManager = (): JSX.Element => <></>;
 const HeaderSocials = (): JSX.Element => <></>;
 const UserProfile = (): JSX.Element => <></>;
-const HeaderNavigation = (): JSX.Element => <></>;
 const HeaderSearch = (): JSX.Element => <></>;
 
 const Header: React.FunctionComponent<{}> = (): JSX.Element => (

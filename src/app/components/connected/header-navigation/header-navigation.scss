@@ -1,0 +1,36 @@
+///*------------------------------------*\
+//    #HEADER-NAVIGATION
+//\*------------------------------------*/
+
+.header-navigation {
+	padding: 0 15px;
+	flex-grow: 1;
+	height: 100%;
+	width: 100%;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&_navlinks {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		height: 100%;
+
+		&_link {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			width: 100px;
+			padding-left: 10px;
+
+			&.connected {
+				color: $white;
+				background-color: $darkblue;
+			}
+		}
+	}
+}
